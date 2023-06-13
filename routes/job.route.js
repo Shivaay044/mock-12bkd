@@ -16,6 +16,16 @@ jobRouter.post("/addjob",async(req,res)=>{
 })
 
 
+jobRouter.get("/addjob",async(req,res)=>{
+    console.log("hello")
+    try {
+       const newjob = await jobModel.find()
+       res.status(200).send(newjob)
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
+})
+
 
 
 
